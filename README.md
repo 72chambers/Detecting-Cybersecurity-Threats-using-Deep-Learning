@@ -1,150 +1,135 @@
-# Detecting-Cybersecurity-Threats-using-Deep-Learning
-Develop a system that can detect Cyber Attacks in network traffic. Utilizing PyTorch, you will train a neural network model and implement real-time anomaly detection. The goal is to improve network security by identifying and mitigating sophisticated cyber-attacks. testing
+
 # Cyber Attack Detection Using PyTorch
 
 ## Overview
 
-This project develops a deep learning-based system capable of detecting cyber attacks within network traffic. Using **PyTorch**, a neural network is trained to distinguish between normal and malicious network behavior. The system also supports **real-time anomaly detection**, enabling rapid identification of suspicious activity to improve overall network security.
+This project develops a deep learning-based system capable of detecting cyber attacks within network traffic. Using **PyTorch**, a neural network is trained to distinguish between normal and malicious network behavior. The system also supports **real-time anomaly detection**, helping improve network security by identifying suspicious activity.
+
+---
 
 ## Features
 
-* Train a neural network using PyTorch
-* Detect cyber attacks from network traffic data
-* Perform real-time anomaly detection
-* Classify normal and malicious network activity
-* Evaluate model performance using standard metrics
-* Modular and scalable architecture
+- Neural network training using PyTorch  
+- Cyber attack detection from network traffic data  
+- Real-time anomaly detection support  
+- Binary classification (Normal vs Attack)  
+- Performance evaluation using accuracy metrics  
+
+---
 
 ## Technologies Used
 
-* Python 3.x
-* PyTorch
-* NumPy
-* Pandas
-* Scikit-learn
-* Matplotlib (optional for visualization)
+- Python 3.x  
+- PyTorch  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- TorchMetrics  
+
+---
 
 ## Project Structure
 
-```text
+
 CyberAttackDetection/
 │
 ├── data/
-│   ├── train.csv
-│   └── test.csv
+│ ├── labelled_train.csv
+│ ├── labelled_test.csv
+│ └── labelled_validation.csv
 │
-├── models/
-│   └── trained_model.pth
-│
-├── src/
-│   ├── train.py
-│   ├── detect.py
-│   ├── preprocess.py
-│   └── model.py
-│
-├── requirements.txt
+├── train.py
 ├── README.md
-└── LICENSE
-```
+├── requirements.txt
+└── .gitignore
+
+
+---
+
+## Dataset Setup (Important)
+
+This project does not include large datasets. You must download and place them into the `data/` folder.
+
+---
+
+## Recommended Datasets
+
+### CICIDS2017
+:contentReference[oaicite:0]{index=0}  
+Download: https://www.unb.ca/cic/datasets/ids-2017.html  
+
+---
+
+### NSL-KDD
+:contentReference[oaicite:1]{index=1}  
+Download: https://www.kaggle.com/datasets/hassan06/nslkdd  
+
+---
+
+### UNSW-NB15
+:contentReference[oaicite:2]{index=2}  
+Download: https://research.unsw.edu.au/projects/unsw-nb15-dataset  
+
+---
+
+## Required CSV Format
+
+Your dataset must include a label column named:
+
+
+sus_label
+
+
+Example:
+
+
+duration,protocol_type,src_bytes,dst_bytes,flag,sus_label
+
+
+- `0` = Normal traffic  
+- `1` = Attack / anomaly  
+
+---
 
 ## Installation
-
-Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/CyberAttackDetection.git
 cd CyberAttackDetection
-```
-
-Install the required dependencies:
-
-```bash
 pip install -r requirements.txt
-```
+Training the Model
+python train.py
+Testing the Model
 
-## Dataset
+The model evaluates:
 
-This project can be trained using publicly available cybersecurity datasets such as:
+Training accuracy
+Validation accuracy
+Test accuracy
+Important Notes
+Do NOT upload datasets to GitHub
+Add this to .gitignore:
+data/
+Future Improvements
+LSTM / Transformer-based detection
+Real-time packet capture (Scapy / Wireshark integration)
+REST API deployment
+Live monitoring dashboard
+Testing Workflow
+Download dataset (CICIDS2017, NSL-KDD, or UNSW-NB15)
+Place CSV files in data/
+Run:
+python train.py
+View accuracy results
+License
 
-* NSL-KDD
-* CICIDS2017
-* UNSW-NB15
+This project is for educational and research purposes.
 
-Place the dataset files inside the `data/` directory before training.
+Author
 
-## Training the Model
+Cybersecurity + Machine Learning project using PyTorch for anomaly detection in network traffic.
 
-Run the training script:
 
-```bash
-python src/train.py
-```
-
-The trained model will be saved in the `models/` directory.
-
-## Real-Time Detection
-
-Start real-time network traffic monitoring:
-
-```bash
-python src/detect.py
-```
-
-The system will analyze incoming network traffic and classify each connection as either:
-
-* Normal
-* Suspicious
-* Attack
-
-Detected anomalies can be logged or displayed in real time.
-
-## Model Evaluation
-
-The model can be evaluated using common machine learning metrics, including:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Confusion Matrix
-
-These metrics help measure the effectiveness of the cyber attack detection system.
-
-## Future Improvements
-
-* Support additional deep learning architectures (LSTM, CNN, Transformer)
-* Integrate with live packet capture using Scapy or Wireshark
-* Deploy as a REST API
-* Add a web-based monitoring dashboard
-* Improve detection of zero-day attacks using unsupervised learning
-
-## Testing
-
-To verify the project functionality:
-
-1. Train the neural network using the provided dataset.
-2. Run the detection script with test network traffic.
-3. Compare predictions against known labels.
-4. Review evaluation metrics to assess performance.
-5. Confirm that anomalous traffic is correctly identified and reported.
-
-## Requirements
-
-* Python 3.9+
-* PyTorch
-* NumPy
-* Pandas
-* Scikit-learn
-
-Install dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
-
-## License
-
-This project is licensed under the MIT License.
 
 ## Author
 

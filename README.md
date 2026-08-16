@@ -124,13 +124,3 @@ View accuracy results
 License
 
 This project is for educational and research purposes.
-
-Author
-
-Cybersecurity + Machine Learning project using PyTorch for anomaly detection in network traffic.
-
-
-
-## Author
-
-Developed as a machine learning and cybersecurity project demonstrating deep learning techniques for network intrusion detection and real-time anomaly detection.
